@@ -21,6 +21,8 @@
 		4095E48D18D4AEA40013F11A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4095E46F18D4AEA30013F11A /* UIKit.framework */; };
 		4095E49518D4AEA40013F11A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4095E49318D4AEA40013F11A /* InfoPlist.strings */; };
 		4095E49718D4AEA40013F11A /* StickyHeaderViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4095E49618D4AEA40013F11A /* StickyHeaderViewTests.m */; };
+		4095E4A318D4AED70013F11A /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4095E4A118D4AED70013F11A /* HeaderView.m */; };
+		4095E4A418D4AED70013F11A /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4095E4A218D4AED70013F11A /* Resources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		4095E49218D4AEA40013F11A /* StickyHeaderViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StickyHeaderViewTests-Info.plist"; sourceTree = "<group>"; };
 		4095E49418D4AEA40013F11A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4095E49618D4AEA40013F11A /* StickyHeaderViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickyHeaderViewTests.m; sourceTree = "<group>"; };
+		4095E4A018D4AED70013F11A /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		4095E4A118D4AED70013F11A /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
+		4095E4A218D4AED70013F11A /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +122,9 @@
 				4095E47D18D4AEA30013F11A /* Main.storyboard */,
 				4095E48018D4AEA30013F11A /* ViewController.h */,
 				4095E48118D4AEA30013F11A /* ViewController.m */,
+				4095E4A018D4AED70013F11A /* HeaderView.h */,
+				4095E4A118D4AED70013F11A /* HeaderView.m */,
+				4095E4A218D4AED70013F11A /* Resources.bundle */,
 				4095E48318D4AEA30013F11A /* Images.xcassets */,
 				4095E47218D4AEA30013F11A /* Supporting Files */,
 			);
@@ -231,6 +239,7 @@
 				4095E48418D4AEA30013F11A /* Images.xcassets in Resources */,
 				4095E47618D4AEA30013F11A /* InfoPlist.strings in Resources */,
 				4095E47F18D4AEA30013F11A /* Main.storyboard in Resources */,
+				4095E4A418D4AED70013F11A /* Resources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +261,7 @@
 				4095E48218D4AEA30013F11A /* ViewController.m in Sources */,
 				4095E47C18D4AEA30013F11A /* AppDelegate.m in Sources */,
 				4095E47818D4AEA30013F11A /* main.m in Sources */,
+				4095E4A318D4AED70013F11A /* HeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +389,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StickyHeaderView/StickyHeaderView-Prefix.pch";
 				INFOPLIST_FILE = "StickyHeaderView/StickyHeaderView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -392,6 +403,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StickyHeaderView/StickyHeaderView-Prefix.pch";
 				INFOPLIST_FILE = "StickyHeaderView/StickyHeaderView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
