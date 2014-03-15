@@ -15,4 +15,6 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (strong, nonatomic) UIPageControl *pageControl;
 
+- (void)updateFrame:(CGRect)rect;
+
 @end

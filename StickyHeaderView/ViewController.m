@@ -58,19 +58,16 @@
     if (_tableView.contentOffset.y <= 0.0f)
     {
         float delta = fabs(MIN(0, _tableView.contentOffset.y));
-        
         rect.origin.y = - delta;
         rect.size.height = HEADER_HEIGHT + delta;
-        _headerView.frame = rect;
-        _headerView.scrollView.frame = rect;
     }
     else
     {
         rect.origin.y = 0;
         rect.size.height = HEADER_HEIGHT;
-        _headerView.frame = rect;
-        _headerView.scrollView.frame = rect;
     }
+    
+    [_headerView updateFrame:rect];
     
 }
 

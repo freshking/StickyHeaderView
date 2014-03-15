@@ -21,7 +21,6 @@
     if (self) {
         // Initialization code
         
-        
         _imageNames = [NSArray arrayWithObjects:@"iPhone1",@"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iPhone6", nil];
         
         NSMutableArray *controllers = [[NSMutableArray alloc] init];
@@ -53,6 +52,13 @@
         [self loadScrollViewWithPage:1];
     }
     return self;
+}
+
+#pragma mark - Private Mehods
+- (void)updateFrame:(CGRect)rect
+{
+    self.frame = rect;
+    _scrollView.frame = rect;
 }
 
 #pragma mark - Load ScrollView Pages
@@ -104,10 +110,7 @@
             
         });
         
-        
-        
     }
-    
     
 }
 
