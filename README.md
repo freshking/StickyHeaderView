@@ -4,7 +4,6 @@ StickyHeaderView
 Example of how to create a UITableView HeaderView which sticks to the top and stretches when you pull down. Kind of like the app Tinder does.
 
 ![alt text](http://imgur.com/CLqiksy.png "Tinder like sticky header view whick stretches when pulled down")
-[Imgur](http://i.imgur.com/CLqiksy.png)
 
 ## Install
 
