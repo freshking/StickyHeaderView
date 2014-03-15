@@ -50,11 +50,11 @@
 }
 
 #pragma mark - ScrollView Method
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGRect rect = _headerView.frame;
     
-    // Only alow the header to stretch if pulled down
+    // Only allow the header to stretch if pulled down
     if (_tableView.contentOffset.y <= 0.0f)
     {
         float delta = fabs(MIN(0, _tableView.contentOffset.y));
