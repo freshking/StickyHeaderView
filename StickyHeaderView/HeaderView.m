@@ -20,7 +20,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
+                
         _imageNames = [NSArray arrayWithObjects:@"iPhone1",@"iPhone2",@"iPhone3",@"iPhone4",@"iPhone5",@"iPhone6", nil];
         
         NSMutableArray *controllers = [[NSMutableArray alloc] init];
@@ -29,9 +29,9 @@
         }
         _viewControllers = controllers;
         
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 200)];
+        _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
         _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * [_imageNames count], _scrollView.frame.size.height);
-        [_scrollView setBackgroundColor:[UIColor clearColor]];
+        [_scrollView setBackgroundColor:[UIColor whiteColor]];
         _scrollView.pagingEnabled = YES;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
@@ -40,7 +40,13 @@
         _scrollView.delegate = self;
         [self addSubview:_scrollView];
         
-        _pageControl = [[UIPageControl alloc]initWithFrame: CGRectMake(0, 190, self.frame.size.width, 10)];
+        _isExpanded = NO;
+        
+        UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
+        singleFingerTap.numberOfTapsRequired = 1;
+        [_scrollView addGestureRecognizer:singleFingerTap];
+        
+        _pageControl = [[UIPageControl alloc]initWithFrame: CGRectMake(0, self.frame.size.height-10, self.frame.size.width, 10)];
         _pageControl.numberOfPages = [_imageNames count];
         [_pageControl setBackgroundColor:[UIColor clearColor]];
         [_pageControl setUserInteractionEnabled:NO];
@@ -59,6 +65,18 @@
 {
     self.frame = rect;
     _scrollView.frame = rect;
+    
+    float y = self.frame.size.height + _scrollView.frame.origin.y - 10.0f;
+    _pageControl.frame = CGRectMake(0.0f, y, self.frame.size.width, 10.0f);
+}
+
+#pragma mark - UITapGestureRecognizer
+- (void)didTap
+{
+    if ([_delegate respondsToSelector:@selector(toggleHeaderViewFrame)])
+    {
+        [_delegate performSelector:@selector(toggleHeaderViewFrame)];
+    }
 }
 
 #pragma mark - Load ScrollView Pages

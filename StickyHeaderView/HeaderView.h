@@ -8,12 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol HeaderViewDelegate <NSObject>
+@optional
+- (void)toggleHeaderViewFrame;
+@end
+
 @interface HeaderView : UIView <UIScrollViewDelegate>
 
-@property (assign, nonatomic) BOOL pageControlUsed;
-@property (strong, nonatomic) NSMutableArray *viewControllers;
+@property (nonatomic, weak) id <HeaderViewDelegate> delegate;
+@property (nonatomic, assign) BOOL isExpanded;
+@property (nonatomic, assign) BOOL pageControlUsed;
+@property (nonatomic, strong) NSMutableArray *viewControllers;
 @property (nonatomic, strong) UIScrollView *scrollView;
-@property (strong, nonatomic) UIPageControl *pageControl;
+@property (nonatomic, strong) UIPageControl *pageControl;
 
 - (void)updateFrame:(CGRect)rect;
 
