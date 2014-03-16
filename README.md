@@ -16,9 +16,9 @@ Basically you set up a header view for your UITableView:
 ```objectivec
 - (void)createHeaderView
 {
-    _headerView = [[HeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, HEADER_HEIGHT)];
-    _tableView.tableHeaderView = _headerView;
-    
+    _headerView = [[HeaderView alloc]initWithFrame:HEADER_INIT_FRAME];
+    _headerView.delegate = self;
+    [_tableView setTableHeaderView:_headerView];
 }
 ```
 
@@ -27,26 +27,23 @@ And then tell the header view to react accordingly depending on the table views 
 ```objectivec
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGRect rect = _headerView.frame;
+    float delta = 0.0f;
+    CGRect rect = HEADER_INIT_FRAME;
     
     // Only allow the header to stretch if pulled down
-    if (_tableView.contentOffset.y <= 0.0f)
+    if (_tableView.contentOffset.y < 0.0f)
     {
-        float delta = fabs(MIN(0, _tableView.contentOffset.y));
-        
-        rect.origin.y = - delta;
-        rect.size.height = HEADER_HEIGHT + delta;
-        _headerView.frame = rect;
-        _headerView.scrollView.frame = rect;
+        // Scroll down
+        delta = fabs(MIN(0.0f, _tableView.contentOffset.y));
     }
-    else
-    {
-        rect.origin.y = 0;
-        rect.size.height = HEADER_HEIGHT;
-        _headerView.frame = rect;
-        _headerView.scrollView.frame = rect;
-    }
+
+    rect.origin.y -= delta;
+    rect.size.height += delta;
+
+    [_headerView updateFrame:rect];
 }
 ```
+
+The header view can be tapped and will expand to full screen and vice versa.
 
 This is really simple. Check out the code for more.
