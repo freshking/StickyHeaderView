@@ -1,3 +1,7 @@
+[![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)](https://github.com/michalkonturek/ActiveRecord/blob/master/LICENSE)
+[![Build Platform](https://cocoapod-badges.herokuapp.com/p/ActiveRecord/badge.png)](https://github.com/michalkonturek/ActiveRecord)
+[![Build Version](https://cocoapod-badges.herokuapp.com/v/ActiveRecord/badge.png)](https://github.com/michalkonturek/ActiveRecord)
+
 StickyHeaderView
 ================
 
